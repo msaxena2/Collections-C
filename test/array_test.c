@@ -136,16 +136,16 @@ void test_array_add_at()
     array_get_at(v, 4, (void*)&i4);
 
     cc_assert(*i0 == a,
-              cc_msg("array_add_at: Expected %d at index 0, but got %d", a, i0));
+              cc_msg("array_add_at: Expected %d at index 0, but got %d", a, *i0));
 
     cc_assert(*i1 == ins,
-              cc_msg("array_add_at: Expected %d at index 1, but got %d", ins, i1));
+              cc_msg("array_add_at: Expected %d at index 1, but got %d", ins, *i1));
 
     cc_assert(*i2 == b,
-              cc_msg("array_add_at: Expected %d at index 2, but got %d", b, i2));
+              cc_msg("array_add_at: Expected %d at index 2, but got %d", b, *i2));
 
     cc_assert(*i3 == c,
-              cc_msg("array_add_at: Expected %d at index 3, but got %d", c, i3));
+              cc_msg("array_add_at: Expected %d at index 3, but got %d", c, *i3));
 
     array_destroy(v);
 
@@ -309,10 +309,10 @@ void test_array_get_at()
     array_get_at(v, 2, (void*) &cr);
 
     cc_assert(*ar == a,
-              cc_msg("array_get: Expected value was %d, but got %d", a, ar));
+              cc_msg("array_get: Expected value was %d, but got %d", a, *ar));
 
     cc_assert(*cr == c,
-              cc_msg("array_get: Expected value was %d, but got %d", c, cr));
+              cc_msg("array_get: Expected value was %d, but got %d", c, *cr));
 
     array_destroy(v);
 }

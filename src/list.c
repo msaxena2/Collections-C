@@ -631,7 +631,9 @@ enum cc_stat list_remove_all(List *list)
  */
 enum cc_stat list_remove_all_free(List *list)
 {
-    bool unlinked = unlink_all(list, true);
+    /* Causes Undefined behavior later down the line*/
+    //bool unlinked = unlink_all(list, true);
+    bool unlinked = unlink_all(list, false);
 
     if (unlinked) {
         list->head = NULL;
@@ -1151,6 +1153,7 @@ static INLINE void merge(Node **left, Node **right, size_t l_size,
 
     size_t i;
     for (i = 0; i < size; i++) {
+        //Trying to read an object of type void * with an lvalue of type int **. Undefined behavior.
         int c = cmp(&(l_part->data), &(r_part->data));
 
         if ((c < 0 || c == 0)) {

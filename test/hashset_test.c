@@ -61,7 +61,7 @@ void test_hashset_add()
     size_t size = hashset_size(hs);
 
     cc_assert(size == 3,
-              cc_msg("hashset_add: Expected size was 3, but got %d",
+              cc_msg("hashset_add: Expected size was 3, but got %zu",
                      size));
 
     cc_assert(hashset_contains(hs, a) &&
@@ -93,7 +93,7 @@ void test_hashset_remove()
     size_t size = hashset_size(hs);
 
     cc_assert(size == 2,
-              cc_msg("hashset_add: Expected size was 2, but got %d",
+              cc_msg("hashset_add: Expected size was 2, but got %zu",
                      size));
 
     cc_assert(!hashset_contains(hs, "bar"),
@@ -124,7 +124,7 @@ void test_hashset_remove_all()
     size_t size = hashset_size(hs);
 
     cc_assert(size == 0,
-              cc_msg("hashset_add: Expected size was 0, but got %d",
+              cc_msg("hashset_add: Expected size was 0, but got %zu",
                      size));
 
     cc_assert(!hashset_contains(hs, "bar") &&
@@ -197,7 +197,7 @@ void test_hashset_iter_remove()
     }
 
     cc_assert(hashset_size(hs) == 2,
-              cc_msg("hashset_iter: Expected size 2 but got %d ",
+              cc_msg("hashset_iter: Expected size 2 but got %zu.",
                      hashset_size(hs)));
 
     cc_assert(!hashset_contains(hs, "bar"),

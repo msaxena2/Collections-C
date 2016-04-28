@@ -1472,8 +1472,8 @@ void test_list_destroy()
 
 void list_1234(List **l)
 {
-    List *list;
-    list_new(&list);
+//    List *list;
+    list_new(&l);
 
     int *a = (int*) malloc(sizeof(int));
     int *b = (int*) malloc(sizeof(int));
@@ -1485,12 +1485,12 @@ void list_1234(List **l)
     *c = 3;
     *d = 4;
 
-    list_add(list, a);
-    list_add(list, b);
-    list_add(list, c);
-    list_add(list, d);
+    list_add(l, a);
+    list_add(l, b);
+    list_add(l, c);
+    list_add(l, d);
 
-    *l = list;
+    //*l = list;
 }
 
 

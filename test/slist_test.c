@@ -747,7 +747,7 @@ void test_slist_copy_deep()
     slist_get_at(list, 2, &e2);
     cc_assert(*e == *((int*) e2),
               cc_msg("slist_copy_deep: Expected element"
-                     " at index 2 was 3, but got %d", e));
+                     " at index 2 was 3, but got %d", *(int *) e));
 
     slist_get_at(list, 2, &e2);
     slist_get_at(cp, 2, (void*) &e);
